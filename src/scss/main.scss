@@ -7,5 +7,92 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
 }
+.body {
+  height: 100dvh;
+  margin: 0;
+  overflow: hidden;
+}
+.page {
+  position: relative;
+  height: 100dvh;
+}
+.container{
+  position:absolute;
+  z-index: 1;
+}
+.loader {
+  background: pink;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 3;
 
+  animation:loader 2s linear forwards;
+}
 
+.loader div {
+  background: white;
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+}
+@keyframes loader {
+  0%{
+    opacity: 1;
+    visibility: visible;
+  }
+  95%{
+    opacity: 1;
+     visibility: visible;
+  }
+  100%{
+    opacity: 0;
+     visibility: hidden;
+  }
+  
+}
+
+.loader div {
+  background: white;
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+
+  transform: scale(0);
+
+  animation:scaling 2s ease-in-out infinite;
+}
+
+.loader div:nth-child(1) {
+  animation-delay: 0.2s;
+ 
+}
+.loader div:nth-child(2) {
+  animation-delay: 0.4s;
+ 
+}
+.loader div:nth-child(3) {
+  animation-delay: 0.6s;
+ 
+}
+@keyframes scaling {
+  0% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+   100% {
+    transform: scale(0.2);
+  }
+
+  
+}
