@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Diseña tu equipo Pokémon</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/66349fc88a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./scss/main.scss" />
     <link rel="icon" href="images/favicon.png" />
   </head>
@@ -66,21 +76,21 @@
 
         <!-- Footer -->
         <section class="footer">
-          <div class="footer__background">
+          <div class="footer__background js_pokemonBtn">
             <img
               class="footer__img"
               src="/images/umbreon.png"
               alt="Imágen de Umbreon"
             />
           </div>
-          <div class="footer__background">
+          <div class="footer__background js_pokemonBtn">
             <img
               class="footer__img"
               src="/images/mimikyu.png"
               alt="Imágen de Mimikyu"
             />
           </div>
-          <div class="footer__background">
+          <div class="footer__background js_pokemonBtn">
             <img
               class="footer__img"
               src="/images/phantump.png"
@@ -96,7 +106,14 @@
         <div></div>
       </section>
       <!-- Modal -->
-      <section></section>
+      <section class="modal hidden js_modal">
+        <div class="modal__content">
+          <button class="modal__close-icon js_modalCloseBtn">
+            <i class="fa-regular fa-circle-xmark fa-2x"></i>
+          </button>
+        </div>
+      </section>
     </div>
   </body>
+  <script src="./js/main.js"></script>
 </html>

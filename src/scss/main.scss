@@ -277,3 +277,34 @@
     transform: scale(0.2);
   }
 }
+.modal{
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 4;
+
+  display:grid;
+  place-items: center;
+
+  &__content{
+    background: white;
+    width: 50%;
+    height: 50%;
+  }
+
+  &__close-icon{
+     background: none;   
+  border: none;          
+  padding: 5px;                  
+  cursor: pointer;       
+  font: inherit;        
+  outline: none;
+  }
+}
+.modal.hidden{
+  display: none;
+}
+.modal.visible{
+  display: grid;
+}
