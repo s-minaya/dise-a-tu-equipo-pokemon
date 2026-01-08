@@ -14,19 +14,19 @@ const actionBtn = document.querySelector(".js_actionBtn");
 // ============================================
 const pokemonOptions = {
   umbreon: [
-    { name: "Espeon", img: "/images/espeon.png" },
-    { name: "Vaporeon", img: "/images/vaporeon.png" },
-    { name: "Umbreon", img: "/images/umbreon.png" },
+    { name: "Espeon", img: "images/espeon.png" },
+    { name: "Vaporeon", img: "images/vaporeon.png" },
+    { name: "Umbreon", img: "images/umbreon.png" },
   ],
   mimikyu: [
-    { name: "Cyndaquill", img: "/images/cyndaquill.png" },
-    { name: "Pichu", img: "/images/pichu.png" },
-    { name: "Mimikyu", img: "/images/mimikyu.png" },
+    { name: "Cyndaquill", img: "images/cyndaquill.png" },
+    { name: "Pichu", img: "images/pichu.png" },
+    { name: "Mimikyu", img: "images/mimikyu.png" },
   ],
   phantump: [
-    { name: "Misdreavus", img: "/images/misdreavus.png" },
-    { name: "Lampent", img: "/images/lampent.png" },
-    { name: "Phantump", img: "/images/phantump.png" },
+    { name: "Misdreavus", img: "images/misdreavus.png" },
+    { name: "Lampent", img: "images/lampent.png" },
+    { name: "Phantump", img: "images/phantump.png" },
   ],
 };
 

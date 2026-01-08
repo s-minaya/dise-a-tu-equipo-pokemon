@@ -96,5 +96,6 @@ Proyecto basado en el curso de Platzi:
 
 Hecho con cariño, Pokémon y `console.log()`💛
 
-Puedes ver el proyecto funcionando [aquí 👆](https:// "Visita el proyecto")
+Puedes ver el proyecto funcionando [aquí 👆](https://s-minaya.github.io/dise-a-tu-equipo-pokemon/)
+
 Si tienes feedback, ¡estaré encantada de leerlo!
