@@ -33,6 +33,9 @@ const pokemonOptions = {
 // Variable de estado: guarda el botón del footer actualmente activo
 let currentFooterButton = null;
 
+// Clave para guardar datos en localStorage
+const STORAGE_KEY = "pokemon-team";
+
 // ============================================
 // FUNCIONES
 // ============================================
@@ -89,6 +92,55 @@ function updateFooterPokemon(pokemon) {
   }
 }
 
+// Guarda el equipo Pokémon actual en localStorage
+function saveTeamToLocalStorage() {
+  const team = {};
+
+  // Recorrer cada botón del footer y guardar su Pokémon actual
+  pokemonButtons.forEach((button) => {
+    const pokemonType = button.dataset.pokemon; // umbreon, mimikyu, phantump
+    const img = button.querySelector("img");
+
+    team[pokemonType] = {
+      name: img.alt.replace("Imágen de ", ""), // Extraer nombre del alt
+      imgSrc: img.src,
+    };
+  });
+
+  // Guardar en localStorage como texto JSON
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(team));
+  console.log("Equipo guardado:", team);
+}
+
+// Carga el equipo Pokémon guardado desde localStorage
+function loadTeamFromLocalStorage() {
+  // Obtener datos guardados
+  const savedTeam = localStorage.getItem(STORAGE_KEY);
+
+  // Si no hay datos guardados, no hacer nada
+  if (!savedTeam) {
+    console.log("No hay equipo guardado");
+    return;
+  }
+
+  // Convertir el texto JSON a objeto
+  const team = JSON.parse(savedTeam);
+  console.log("Equipo cargado:", team);
+
+  // Actualizar cada Pokémon del footer con los datos guardados
+  pokemonButtons.forEach((button) => {
+    const pokemonType = button.dataset.pokemon;
+    const savedPokemon = team[pokemonType];
+
+    // Si existe un Pokémon guardado para este botón, actualizarlo
+    if (savedPokemon) {
+      const img = button.querySelector("img");
+      img.src = savedPokemon.imgSrc;
+      img.alt = `Imágen de ${savedPokemon.name}`;
+    }
+  });
+}
+
 // ============================================
 // EVENT LISTENERS
 // ============================================
@@ -123,6 +175,9 @@ actionBtn.addEventListener("click", () => {
   // Actualizar el footer con el Pokémon seleccionado
   updateFooterPokemon(selectedPokemon);
 
+  // GUuardar en el Local Storage
+  saveTeamToLocalStorage();
+
   // Cerrar modal
   closeModal();
 
@@ -140,5 +195,7 @@ modal.addEventListener("click", (event) => {
 // ============================================
 // INICIALIZACIÓN
 // ============================================
+
+loadTeamFromLocalStorage();
 
 console.log("Aplicación Pokémon iniciada correctamente");
