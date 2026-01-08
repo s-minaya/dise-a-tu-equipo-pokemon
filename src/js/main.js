@@ -26,6 +26,8 @@ pokemonButtons.forEach((button) => {
   });
 });
 modalCloseBtn.addEventListener("click", (ev) => {
+  console.log("click");
+
   modal.classList.add("hidden");
   modal.classList.remove("visible");
 });
