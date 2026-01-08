@@ -88,7 +88,7 @@ function updateFooterPokemon(pokemon) {
   if (currentFooterButton) {
     const footerImg = currentFooterButton.querySelector("img");
     footerImg.src = pokemon.imgSrc;
-    footerImg.alt = `Imagen de ${pokemon.name}`;
+    footerImg.alt = pokemon.name;
   }
 }
 
@@ -102,7 +102,7 @@ function saveTeamToLocalStorage() {
     const img = button.querySelector("img");
 
     team[pokemonType] = {
-      name: img.alt.replace("Imágen de ", ""), // Extraer nombre del alt
+      name: img.alt.replace("Imagen de ", ""),
       imgSrc: img.src,
     };
   });
