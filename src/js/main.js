@@ -109,7 +109,6 @@ function saveTeamToLocalStorage() {
 
   // Guardar en localStorage como texto JSON
   localStorage.setItem(STORAGE_KEY, JSON.stringify(team));
-  console.log("Equipo guardado:", team);
 }
 
 // Carga el equipo Pokémon guardado desde localStorage
@@ -119,13 +118,11 @@ function loadTeamFromLocalStorage() {
 
   // Si no hay datos guardados, no hacer nada
   if (!savedTeam) {
-    console.log("No hay equipo guardado");
     return;
   }
 
   // Convertir el texto JSON a objeto
   const team = JSON.parse(savedTeam);
-  console.log("Equipo cargado:", team);
 
   // Actualizar cada Pokémon del footer con los datos guardados
   pokemonButtons.forEach((button) => {
@@ -180,9 +177,6 @@ actionBtn.addEventListener("click", () => {
 
   // Cerrar modal
   closeModal();
-
-  // Log para debug
-  console.log("Pokémon seleccionado:", selectedPokemon.name);
 });
 
 // Cierra el modal al hacer click fuera de él (en el fondo oscuro)
@@ -197,5 +191,3 @@ modal.addEventListener("click", (event) => {
 // ============================================
 
 loadTeamFromLocalStorage();
-
-console.log("Aplicación Pokémon iniciada correctamente");
